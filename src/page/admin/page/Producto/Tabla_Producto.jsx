@@ -858,7 +858,7 @@ const Tabla_Producto = () => {
          <div className="sm:flex sm:items-center">
             <div className="sm:flex-auto">
                <h1 className="text-2xl font-semibold leading-6 text-gray-900">
-                  Listado de Productos
+                  Listado de Productossssssssss
                </h1>
                <p className="mt-2 text-sm text-gray-700">
                   A list of all the users in your account including their name,
