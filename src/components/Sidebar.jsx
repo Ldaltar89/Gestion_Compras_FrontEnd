@@ -1,16 +1,10 @@
-import {
-   RiBox3Line,
-   RiUser2Line,
-   RiUserAddLine,
-   RiLogoutBoxLine,
-} from "react-icons/ri";
+import { RiBox3Line, RiUser2Line, RiUserAddLine } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
 
 const navigation = [
    { name: "Producto", url: "producto", icon: RiBox3Line },
    { name: "Proveedor", url: "proveedor", icon: RiUser2Line },
    { name: "Usuarios", url: "usuario", icon: RiUserAddLine },
-   { name: "Marca", url: "marca", icon: RiLogoutBoxLine },
 ];
 
 function className(...classes) {

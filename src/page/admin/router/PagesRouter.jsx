@@ -1,4 +1,3 @@
-import React from "react";
 import Layout from "../layout/Layout";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Tabla_Producto from "../page/Producto/Tabla_Producto";
@@ -16,11 +15,11 @@ const PagesRouter = () => {
          <Routes>
             <Route path="/producto" element={<Tabla_Producto />} />
             <Route path="/producto/crear" element={<Crear_Producto />} />
-            <Route path="/producto/editar/123" element={<Editar_Producto />} />
+            <Route path="/producto/editar/:id" element={<Editar_Producto />} />
             <Route path="/proveedor" element={<Tabla_Proveedor />} />
             <Route path="/proveedor/crear" element={<Crear_Proveedor />} />
             <Route
-               path="/proveedor/editar/456"
+               path="/proveedor/editar/:id"
                element={<Editar_Proveedor />}
             />
             <Route path="/usuario/crear" element={<Crear_Usuario />} />

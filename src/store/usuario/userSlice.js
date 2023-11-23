@@ -5,6 +5,7 @@ export const userSlice = createSlice({
    initialState: {
       users: [],
       status: "",
+      statusBotton: "",
    },
    reducers: {
       onGetUsers: (state, { payload }) => {
@@ -20,8 +21,20 @@ export const userSlice = createSlice({
       onClearCheckingUser: (state) => {
          state.status = "";
       },
+      onCheckingBottonUser: (state, { payload }) => {
+         state.statusBotton = payload;
+      },
+      onClearCheckingBottonUser: (state) => {
+         state.statusBotton = "";
+      },
    },
 });
 
-export const { onGetUsers, onCheckingUser, onDeleteUser, onClearCheckingUser } =
-   userSlice.actions;
+export const {
+   onGetUsers,
+   onCheckingUser,
+   onDeleteUser,
+   onClearCheckingUser,
+   onCheckingBottonUser,
+   onClearCheckingBottonUser,
+} = userSlice.actions;

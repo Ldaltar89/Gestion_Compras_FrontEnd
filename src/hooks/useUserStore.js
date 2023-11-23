@@ -5,6 +5,8 @@ import {
    onClearCheckingUser,
    onDeleteUser,
    onGetUsers,
+   onCheckingBottonUser,
+   onClearCheckingBottonUser,
 } from "../store";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
@@ -25,17 +27,19 @@ export const useUserStore = () => {
    };
 
    const startRegister = async (datos) => {
+      dispatch(onCheckingBottonUser("checkingAdd"));
       try {
-         const { data } = await gestionComprasApi.post("/auth/new", datos);
+         await gestionComprasApi.post("/auth/new", datos);
          navigate("/usuario");
          Swal.fire("Registro Exitoso", "", "success");
       } catch (error) {
          const err = error.response.data.msg;
          Swal.fire(err, "", "error");
       }
+      dispatch(onClearCheckingBottonUser());
    };
 
-   const deleteUser = async (id) => {
+   const startDeleteUser = async (id) => {
       try {
          Swal.fire({
             title: "¿Estas seguro?",
@@ -62,5 +66,5 @@ export const useUserStore = () => {
       }
    };
 
-   return { startUser, deleteUser, startRegister };
+   return { startUser, startDeleteUser, startRegister };
 };

@@ -4,6 +4,9 @@ import {
    onClearCheckingProveedor,
    onDeleteProveedor,
    onGetProveedor,
+   onGetIdProveedor,
+   onCheckingBottonProveedor,
+   onClearCheckingBottonProveedor,
 } from "../store";
 import { gestionComprasApi } from "../api";
 import Swal from "sweetalert2";
@@ -15,7 +18,6 @@ export const useProveedorStore = () => {
 
    const startProveedor = async () => {
       dispatch(onCheckingProveedor());
-
       try {
          const { data } = await gestionComprasApi.get("/proveedor");
          dispatch(onGetProveedor(data.proveedor));
@@ -25,58 +27,10 @@ export const useProveedorStore = () => {
       dispatch(onClearCheckingProveedor());
    };
 
-   const deleteProveedor = async (id) => {
-      console.log(id);
-      Swal.fire({
-         title: "¿Estas seguro?",
-         text: "¡No podrás revertir esto!",
-         icon: "warning",
-         showCancelButton: true,
-         confirmButtonColor: "#3085d6",
-         cancelButtonColor: "#d33",
-         confirmButtonText: "¡Sí, bórralo!",
-      }).then(async (result) => {
-         if (result.isConfirmed) {
-            await gestionComprasApi.delete(`/proveedor/${id}`);
-            dispatch(onDeleteProveedor(id));
-            Swal.fire({
-               title: "¡Eliminado!",
-               text: "El Proveedor ha sido eliminado.",
-               icon: "success",
-            });
-         }
-      });
-
+   const startRegisterProveedor = async (datos) => {
+      dispatch(onCheckingBottonProveedor("checkingAdd"));
       try {
-      } catch (error) {
-         console.log(error);
-         Swal.fire("Error al eliminar proveedor", "", "error");
-      }
-   };
-
-   const startRegisterProveedor = async ({
-      nombres,
-      apellidos,
-      cedula,
-      telefono,
-      ciudad,
-      direccion,
-      correo,
-      empresa,
-   }) => {
-      dispatch(onCheckingProveedor());
-
-      try {
-         const { data } = await gestionComprasApi.post("/proveedor", {
-            nombres,
-            apellidos,
-            cedula,
-            telefono,
-            ciudad,
-            direccion,
-            correo,
-            empresa,
-         });
+         await gestionComprasApi.post("/proveedor", datos);
          Swal.fire("Registro Exitoso", "", "success");
          navigate("/proveedor");
       } catch (error) {
@@ -85,8 +39,63 @@ export const useProveedorStore = () => {
             Object.values(error.response.data.errors)[0].msg;
          Swal.fire(err, "", "error");
       }
+      dispatch(onClearCheckingBottonProveedor());
+   };
+
+   const startGetIdProveedor = async (id) => {
+      dispatch(onCheckingProveedor());
+      try {
+         const { data } = await gestionComprasApi.get(`/proveedor/${id}`);
+         dispatch(onGetIdProveedor(data));
+      } catch (error) {
+         Swal.fire("Error al obtener proveedor", "", "error");
+      }
       dispatch(onClearCheckingProveedor());
    };
 
-   return { startProveedor, deleteProveedor, startRegisterProveedor };
+   const startPutProveedor = async (datos) => {
+      dispatch(onCheckingBottonProveedor("checkingPut"));
+      try {
+         await gestionComprasApi.put(`/proveedor/${datos.id}`, datos);
+         Swal.fire("Actualizado correctamente", "", "success");
+         navigate("/proveedor");
+      } catch (error) {
+         Swal.fire("Error al actualizar proveedor", "", "error");
+      }
+      dispatch(onClearCheckingBottonProveedor());
+   };
+
+   const startdDeleteProveedor = async (id) => {
+      try {
+         Swal.fire({
+            title: "¿Estas seguro?",
+            text: "¡No podrás revertir esto!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "¡Sí, bórralo!",
+         }).then(async (result) => {
+            if (result.isConfirmed) {
+               await gestionComprasApi.delete(`/proveedor/${id}`);
+               dispatch(onDeleteProveedor(id));
+               Swal.fire({
+                  title: "¡Eliminado!",
+                  text: "El Proveedor ha sido eliminado.",
+                  icon: "success",
+               });
+            }
+         });
+      } catch (error) {
+         Swal.fire("Error al eliminar proveedor", "", "error");
+      }
+   };
+
+   return {
+      startProveedor,
+      startdDeleteProveedor,
+      startRegisterProveedor,
+      startGetIdProveedor,
+      startPutProveedor,
+   };
 };

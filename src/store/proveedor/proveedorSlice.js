@@ -3,25 +3,37 @@ import { createSlice } from "@reduxjs/toolkit";
 export const proveedorSlice = createSlice({
    name: "proveedor",
    initialState: {
-      status: "Checking",
+      status: "",
+      statusBotton: "",
       proveedor: [],
+      viewProveedor: {},
    },
    reducers: {
-      onCheckingProveedor: (state) => {
-         state.status = "Checking";
-      },
       onGetProveedor: (state, { payload }) => {
          state.status = "";
          state.proveedor = payload;
       },
 
+      onGetIdProveedor(state, { payload }) {
+         state.viewProveedor = payload.proveedor;
+      },
       onDeleteProveedor: (state, { payload }) => {
+         console.log(payload);
          state.proveedor = state.proveedor.filter(
-            (items) => items.id !== payload
+            (items) => items._id !== payload
          );
+      },
+      onCheckingProveedor: (state) => {
+         state.status = "Checking";
       },
       onClearCheckingProveedor: (state) => {
          state.status = "";
+      },
+      onCheckingBottonProveedor: (state, { payload }) => {
+         state.statusBotton = payload;
+      },
+      onClearCheckingBottonProveedor: (state) => {
+         state.statusBotton = "";
       },
    },
 });
@@ -31,4 +43,7 @@ export const {
    onDeleteProveedor,
    onClearCheckingProveedor,
    onGetProveedor,
+   onGetIdProveedor,
+   onCheckingBottonProveedor,
+   onClearCheckingBottonProveedor,
 } = proveedorSlice.actions;

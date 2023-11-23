@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { useForm } from "../../../../hooks";
 import { useSelector } from "react-redux";
 import { useCiudadStore } from "../../../../hooks/useCiudadStore";
 import { useEmpresaStore } from "../../../../hooks/useEmpresaStore";
@@ -7,10 +6,12 @@ import { useProveedorStore } from "../../../../hooks/useProveedorStore";
 import { Field, Form, Formik, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useEffect } from "react";
+import SpinnerBotton from "../../../../components/SpinnerBotton";
 
 const Crear_Proveedor = () => {
    const { ciudad } = useSelector((state) => state.ciudad);
    const { empresa } = useSelector((state) => state.empresa);
+   const { statusBotton } = useSelector((state) => state.proveedor);
    const { startCiudad } = useCiudadStore();
    const { startEmpresa } = useEmpresaStore();
    const { startRegisterProveedor } = useProveedorStore();
@@ -284,12 +285,16 @@ const Crear_Proveedor = () => {
                      >
                         <span>Cancelar</span>
                      </Link>
-                     <button
-                        type="submit"
-                        className="flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-1.5 text-sm font-medium text-white hover:bg-blue-700"
-                     >
-                        <span>Crear</span>
-                     </button>
+                     {statusBotton === "checkingAdd" ? (
+                        <SpinnerBotton title={"Creando..."} />
+                     ) : (
+                        <button
+                           type="submit"
+                           className="inline-flex w-full justify-center rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 sm:ml-3 sm:w-auto"
+                        >
+                           <span>Crear</span>
+                        </button>
+                     )}
                   </div>
                </Form>
             )}
