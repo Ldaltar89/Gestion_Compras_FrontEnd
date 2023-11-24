@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import PagesRouter from "../page/admin/router/PagesRouter";
 import AuthRouter from "../page/auth/router/AuthRouter";

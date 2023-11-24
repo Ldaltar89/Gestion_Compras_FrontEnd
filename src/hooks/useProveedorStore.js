@@ -27,6 +27,15 @@ export const useProveedorStore = () => {
       dispatch(onClearCheckingProveedor());
    };
 
+   const startProveedorList = async () => {
+      try {
+         const { data } = await gestionComprasApi.get("/proveedor/list");
+         dispatch(onGetProveedor(data.proveedor));
+      } catch (error) {
+         Swal.fire("Error al presentar proveedores", "", "error");
+      }
+   };
+
    const startRegisterProveedor = async (datos) => {
       dispatch(onCheckingBottonProveedor("checkingAdd"));
       try {
@@ -97,5 +106,6 @@ export const useProveedorStore = () => {
       startRegisterProveedor,
       startGetIdProveedor,
       startPutProveedor,
+      startProveedorList,
    };
 };

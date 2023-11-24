@@ -8,7 +8,6 @@ export const useAuthStore = () => {
 
    const startLogin = async ({ email, password }) => {
       dispatch(onChecking());
-
       try {
          const { data } = await gestionComprasApi.post("/auth", {
             email,
@@ -16,7 +15,7 @@ export const useAuthStore = () => {
          });
          localStorage.setItem("token", data.token);
          localStorage.setItem("token-init-date", new Date().getTime());
-         dispatch(onLogin({ name: data.name, uid: data.uid }));
+         dispatch(onLogin({ name: data.name, uid: data.uid, rol: data.rol }));
       } catch (error) {
          dispatch(onLogout("Credenciales incorrectas"));
          setTimeout(() => {
@@ -32,7 +31,7 @@ export const useAuthStore = () => {
          const { data } = await gestionComprasApi.get("/auth/renew");
          localStorage.setItem("token", data.token);
          localStorage.setItem("token-init-date", new Date().getTime());
-         dispatch(onLogin({ name: data.name, uid: data.uid }));
+         dispatch(onLogin({ name: data.name, uid: data.uid, rol: data.rol }));
       } catch (error) {
          localStorage.clear();
          dispatch(onLogout());

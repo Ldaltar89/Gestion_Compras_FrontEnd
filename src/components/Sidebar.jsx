@@ -1,17 +1,36 @@
 import { RiBox3Line, RiUser2Line, RiUserAddLine } from "react-icons/ri";
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-
-const navigation = [
-   { name: "Producto", url: "producto", icon: RiBox3Line },
-   { name: "Proveedor", url: "proveedor", icon: RiUser2Line },
-   { name: "Usuarios", url: "usuario", icon: RiUserAddLine },
-];
 
 function className(...classes) {
    return classes.filter(Boolean).join(" ");
 }
 
 const Sidebar = () => {
+   const { user } = useSelector((state) => state.auth);
+   const navigation = [
+      {
+         name: "Producto",
+         url: "producto",
+         icon: RiBox3Line,
+         protected: ["USER", "ADMIN"],
+      },
+      {
+         name: "Proveedor",
+         url: "proveedor",
+         icon: RiUser2Line,
+         protected: ["ADMIN"],
+      },
+      {
+         name: "Usuarios",
+         url: "usuario",
+         icon: RiUserAddLine,
+         protected: ["ADMIN"],
+      },
+   ];
+
+   const items = navigation.filter((role) => role.protected.includes(user.rol));
+
    return (
       <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
          <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-900 px-6 pb-4">
@@ -30,7 +49,7 @@ const Sidebar = () => {
                <ul role="list" className="flex flex-1 flex-col gap-y-7">
                   <li>
                      <ul role="list" className="-mx-2 space-y-1">
-                        {navigation.map((item) => (
+                        {items.map((item) => (
                            <li key={item.name}>
                               <NavLink
                                  to={item.url}

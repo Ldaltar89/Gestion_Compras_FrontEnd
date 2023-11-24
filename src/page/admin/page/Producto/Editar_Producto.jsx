@@ -17,7 +17,7 @@ const Editar_Producto = () => {
    const { proveedor } = useSelector((state) => state.proveedor);
    const { marca } = useSelector((state) => state.marca);
    const { categoria } = useSelector((state) => state.categoria);
-   const { startProveedor } = useProveedorStore();
+   const { startProveedorList } = useProveedorStore();
    const { startMarca } = useMarcaStore();
    const { startCategoria } = useCategoriaStore();
    const { startPutProducto, startGetIdProducto } = useProductoStore();
@@ -27,7 +27,7 @@ const Editar_Producto = () => {
       startGetIdProducto(id);
       startCategoria();
       startMarca();
-      startProveedor();
+      startProveedorList();
    }, []);
 
    if (status === "Checking") {

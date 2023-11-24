@@ -14,7 +14,7 @@ const Crear_Producto = () => {
    const { proveedor } = useSelector((state) => state.proveedor);
    const { marca } = useSelector((state) => state.marca);
    const { categoria } = useSelector((state) => state.categoria);
-   const { startProveedor } = useProveedorStore();
+   const { startProveedorList } = useProveedorStore();
    const { startMarca } = useMarcaStore();
    const { startCategoria } = useCategoriaStore();
    const { startRegisterProducto } = useProductoStore();
@@ -22,7 +22,7 @@ const Crear_Producto = () => {
    useEffect(() => {
       startCategoria();
       startMarca();
-      startProveedor();
+      startProveedorList();
    }, []);
 
    return (

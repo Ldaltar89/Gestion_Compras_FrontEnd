@@ -1,24 +1,36 @@
 import { HiCog6Tooth } from "react-icons/hi2";
 import { NavLink } from "react-router-dom";
-import {
-   RiBox3Line,
-   RiUser2Line,
-   RiUserAddLine,
-   RiLogoutBoxLine,
-} from "react-icons/ri";
-
-const navigation = [
-   { name: "Producto", url: "producto", icon: RiBox3Line },
-   { name: "Proveedor", url: "proveedor", icon: RiUser2Line },
-   { name: "Usuarios", url: "usuario", icon: RiUserAddLine },
-   { name: "Marca", url: "marca", icon: RiLogoutBoxLine },
-];
+import { RiBox3Line, RiUser2Line, RiUserAddLine } from "react-icons/ri";
+import { useSelector } from "react-redux";
 
 function className(...classes) {
    return classes.filter(Boolean).join(" ");
 }
 
 const SidebarMobil = () => {
+   const { user } = useSelector((state) => state.auth);
+   const navigation = [
+      {
+         name: "Producto",
+         url: "producto",
+         icon: RiBox3Line,
+         protected: ["USER", "ADMIN"],
+      },
+      {
+         name: "Proveedor",
+         url: "proveedor",
+         icon: RiUser2Line,
+         protected: ["ADMIN"],
+      },
+      {
+         name: "Usuarios",
+         url: "usuario",
+         icon: RiUserAddLine,
+         protected: ["ADMIN"],
+      },
+   ];
+
+   const items = navigation.filter((role) => role.protected.includes(user.rol));
    return (
       <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-900 px-6 pb-4 ring-1 ring-white/10">
          <div className="flex h-16 shrink-0 items-center gap-5">
@@ -36,7 +48,7 @@ const SidebarMobil = () => {
             <ul role="list" className="flex flex-1 flex-col gap-y-7">
                <li>
                   <ul role="list" className="-mx-2 space-y-1">
-                     {navigation.map((item) => (
+                     {items.map((item) => (
                         <li key={item.name}>
                            <NavLink
                               to={item.url}
