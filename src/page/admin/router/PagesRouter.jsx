@@ -9,7 +9,6 @@ import Editar_Proveedor from "../page/Proveedor/Editar_Proveedor";
 import Crear_Usuario from "../page/Usuario/Crear_Usuario";
 import Tabla_Usuario from "../page/Usuario/Tabla_Usuario";
 import ProtectedRouter from "./ProtectedRouter";
-// import Error404 from "../page/Error404";
 
 const PagesRouter = () => {
    return (

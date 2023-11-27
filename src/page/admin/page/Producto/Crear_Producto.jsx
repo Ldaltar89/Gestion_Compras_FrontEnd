@@ -26,7 +26,7 @@ const Crear_Producto = () => {
    }, []);
 
    return (
-      <div className="m-5 mt-5 h-auto md:m-10">
+      <div className="animate__animated animate__fadeIn animate__faster m-5 mt-5 h-auto md:m-10">
          {/* <!-- component --> */}
          <div className="sm:flex-auto">
             <h1 className="text-2xl font-semibold leading-6 text-gray-900">

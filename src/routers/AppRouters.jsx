@@ -5,7 +5,6 @@ import AuthRouter from "../page/auth/router/AuthRouter";
 import { useAuthStore } from "../hooks";
 
 const AppRouters = () => {
-   // const authStatus = "not-authenticated";
    const { status, checkAuthToken } = useAuthStore();
 
    useEffect(() => {

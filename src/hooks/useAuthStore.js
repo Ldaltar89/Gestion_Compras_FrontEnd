@@ -1,18 +1,21 @@
 import { useDispatch, useSelector } from "react-redux";
 import { gestionComprasApi } from "../api";
-import { clearErrorMessage, onChecking, onLogin, onLogout } from "../store";
+import {
+   clearErrorMessage,
+   onCheckingButton,
+   onClearCheckingButton,
+   onLogin,
+   onLogout,
+} from "../store";
 
 export const useAuthStore = () => {
    const { status, user, errorMessage } = useSelector((state) => state.auth);
    const dispatch = useDispatch();
 
-   const startLogin = async ({ email, password }) => {
-      dispatch(onChecking());
+   const startLogin = async (datos) => {
+      dispatch(onCheckingButton());
       try {
-         const { data } = await gestionComprasApi.post("/auth", {
-            email,
-            password,
-         });
+         const { data } = await gestionComprasApi.post("/auth", datos);
          localStorage.setItem("token", data.token);
          localStorage.setItem("token-init-date", new Date().getTime());
          dispatch(onLogin({ name: data.name, uid: data.uid, rol: data.rol }));
@@ -22,6 +25,7 @@ export const useAuthStore = () => {
             dispatch(clearErrorMessage());
          }, 10);
       }
+      dispatch(onClearCheckingButton());
    };
 
    const checkAuthToken = async () => {

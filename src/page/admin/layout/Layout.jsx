@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import { Fragment, useState } from "react";
 import Header from "../../../components/Header";
 import Sidebar from "../../../components/Sidebar";
 import { HiMiniXMark } from "react-icons/hi2";
@@ -8,7 +8,7 @@ import { Dialog, Transition } from "@headlessui/react";
 function Layout({ children }) {
    const [sidebarOpen, setSidebarOpen] = useState(false);
    return (
-      <div>
+      <div className="animate__animated animate__fadeIn animate__faster">
          <Transition.Root show={sidebarOpen} as={Fragment}>
             <Dialog
                as="div"

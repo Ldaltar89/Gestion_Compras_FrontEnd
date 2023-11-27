@@ -45,6 +45,36 @@ const Sidebar = () => {
                   Sistema de inventario{" "}
                </span>
             </div>
+            <div className="relative flex items-center space-x-3 rounded-lg border border-gray-700 bg-gray-900 px-6 py-5 ">
+               <div className="flex-shrink-0">
+                  <span className="inline-block h-10 w-10 overflow-hidden rounded-full bg-gray-100">
+                     <svg
+                        className="h-full w-full text-gray-300"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                     >
+                        <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+                     </svg>
+                  </span>
+               </div>
+               <div className="min-w-0 flex-1">
+                  <span className="">
+                     <span className="absolute inset-0" aria-hidden="true" />
+                     <p className="text-xs font-medium text-white">
+                        {user.name}
+                     </p>
+                     <span
+                        className={`inline-flex items-center rounded-md  px-2 py-1 text-[0.6rem] font-medium  ring-1 ring-inset ${
+                           user.rol === "ADMIN"
+                              ? "bg-green-50 text-green-600 ring-green-500/10"
+                              : "bg-blue-50 text-blue-600 ring-blue-500/10"
+                        } `}
+                     >
+                        {user.rol}
+                     </span>
+                  </span>
+               </div>
+            </div>
             <nav className="flex flex-1 flex-col">
                <ul role="list" className="flex flex-1 flex-col gap-y-7">
                   <li>
