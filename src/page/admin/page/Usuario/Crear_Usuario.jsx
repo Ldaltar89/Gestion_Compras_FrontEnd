@@ -56,15 +56,15 @@ const Crear_Usuario = () => {
                            </label>
                            <Field
                               name="name"
-                              className={`bg-grey-lighter text-grey-darker mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
+                              className={`mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
                                  errors.name && touched.name
-                                    ? "focus:border-red-600 focus:ring-1 focus:ring-red-500"
+                                    ? "border-red-600 ring-1 ring-red-500"
                                     : "focus:border-blue-600 focus:ring-1 focus:ring-blue-500"
                               }`}
                               type="text"
                               placeholder="Nombre Completo del Usuario"
                            />
-                           <div className="text-red-500">
+                           <div className="text-red-500 ">
                               <ErrorMessage name="name" />
                            </div>
                         </div>
@@ -74,9 +74,9 @@ const Crear_Usuario = () => {
                            </label>
                            <Field
                               name="email"
-                              className={`bg-grey-lighter text-grey-darker mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
+                              className={`mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
                                  errors.email && touched.email
-                                    ? "focus:border-red-600 focus:ring-1 focus:ring-red-500"
+                                    ? "border-red-600 ring-1 ring-red-500"
                                     : "focus:border-blue-600 focus:ring-1 focus:ring-blue-500"
                               }`}
                               type="email"
@@ -96,9 +96,9 @@ const Crear_Usuario = () => {
                               <Field
                                  as="select"
                                  name="rol"
-                                 className={`bg-grey-lighter text-grey-darker mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
+                                 className={`mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
                                     errors.rol && touched.rol
-                                       ? "focus:border-red-600 focus:ring-1 focus:ring-red-500"
+                                       ? "border-red-600 ring-1 ring-red-500"
                                        : "focus:border-blue-600 focus:ring-1 focus:ring-blue-500"
                                  }`}
                               >
@@ -133,9 +133,9 @@ const Crear_Usuario = () => {
                            </label>
                            <Field
                               name="password"
-                              className={`bg-grey-lighter text-grey-darker mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
+                              className={`mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
                                  errors.password && touched.password
-                                    ? "focus:border-red-600 focus:ring-1 focus:ring-red-500"
+                                    ? "border-red-600 ring-1 ring-red-500"
                                     : "focus:border-blue-600 focus:ring-1 focus:ring-blue-500"
                               }`}
                               type="password"

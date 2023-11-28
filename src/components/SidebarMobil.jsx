@@ -13,19 +13,19 @@ const SidebarMobil = () => {
          name: "Producto",
          url: "producto",
          icon: RiBox3Line,
-         protected: ["USER", "ADMIN"],
+         protected: ["Usuario", "Administrador"],
       },
       {
          name: "Proveedor",
          url: "proveedor",
          icon: RiUser2Line,
-         protected: ["ADMIN"],
+         protected: ["Administrador"],
       },
       {
          name: "Usuarios",
          url: "usuario",
          icon: RiUserAddLine,
-         protected: ["ADMIN"],
+         protected: ["Administrador"],
       },
    ];
 
@@ -63,7 +63,7 @@ const SidebarMobil = () => {
                   </p>
                   <span
                      className={`inline-flex items-center rounded-md  px-2 py-1 text-xs font-medium  ring-1 ring-inset ${
-                        user.rol === "ADMIN"
+                        user.rol === "Administrador"
                            ? "bg-green-50 text-green-600 ring-green-500/10"
                            : "bg-blue-50 text-blue-600 ring-blue-500/10"
                      } `}

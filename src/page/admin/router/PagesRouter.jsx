@@ -17,7 +17,9 @@ const PagesRouter = () => {
             <Route path="/producto" element={<Tabla_Producto />} />
             <Route path="/producto/crear" element={<Crear_Producto />} />
             <Route path="/producto/editar/:id" element={<Editar_Producto />} />
-            <Route element={<ProtectedRouter allowedRoles={["ADMIN"]} />}>
+            <Route
+               element={<ProtectedRouter allowedRoles={["Administrador"]} />}
+            >
                <Route path="/proveedor" element={<Tabla_Proveedor />} />
                <Route path="/proveedor/crear" element={<Crear_Proveedor />} />
                <Route

@@ -90,9 +90,9 @@ const Crear_Proveedor = () => {
                            </label>
                            <Field
                               name="nombres"
-                              className={`bg-grey-lighter text-grey-darker mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
+                              className={`mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
                                  errors.nombres && touched.nombres
-                                    ? "focus:border-red-600 focus:ring-1 focus:ring-red-500"
+                                    ? "border-red-600 ring-1 ring-red-500"
                                     : "focus:border-blue-600 focus:ring-1 focus:ring-blue-500"
                               }`}
                               type="text"
@@ -108,9 +108,9 @@ const Crear_Proveedor = () => {
                            </label>
                            <Field
                               name="apellidos"
-                              className={`bg-grey-lighter text-grey-darker mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
+                              className={`mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
                                  errors.apellidos && touched.apellidos
-                                    ? "focus:border-red-600 focus:ring-1 focus:ring-red-500"
+                                    ? "border-red-600 ring-1 ring-red-500"
                                     : "focus:border-blue-600 focus:ring-1 focus:ring-blue-500"
                               }`}
                               type="text"
@@ -128,9 +128,9 @@ const Crear_Proveedor = () => {
                            </label>
                            <Field
                               name="cedula"
-                              className={`bg-grey-lighter text-grey-darker mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
+                              className={`mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
                                  errors.cedula && touched.cedula
-                                    ? "focus:border-red-600 focus:ring-1 focus:ring-red-500"
+                                    ? "border-red-600 ring-1 ring-red-500"
                                     : "focus:border-blue-600 focus:ring-1 focus:ring-blue-500"
                               }`}
                               type="text"
@@ -146,9 +146,9 @@ const Crear_Proveedor = () => {
                            </label>
                            <Field
                               name="telefono"
-                              className={`bg-grey-lighter text-grey-darker mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
+                              className={`mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
                                  errors.telefono && touched.telefono
-                                    ? "focus:border-red-600 focus:ring-1 focus:ring-red-500"
+                                    ? "border-red-600 ring-1 ring-red-500"
                                     : "focus:border-blue-600 focus:ring-1 focus:ring-blue-500"
                               }`}
                               type="text"
@@ -166,9 +166,9 @@ const Crear_Proveedor = () => {
                               <Field
                                  as="select"
                                  name="ciudad"
-                                 className={`bg-grey-lighter text-grey-darker mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
+                                 className={`mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
                                     errors.ciudad && touched.ciudad
-                                       ? "focus:border-red-600 focus:ring-1 focus:ring-red-500"
+                                       ? "border-red-600 ring-1 ring-red-500"
                                        : "focus:border-blue-600 focus:ring-1 focus:ring-blue-500"
                                  }`}
                               >
@@ -205,9 +205,9 @@ const Crear_Proveedor = () => {
                            </label>
                            <Field
                               name="direccion"
-                              className={`bg-grey-lighter text-grey-darker mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
+                              className={`mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
                                  errors.direccion && touched.direccion
-                                    ? "focus:border-red-600 focus:ring-1 focus:ring-red-500"
+                                    ? "border-red-600 ring-1 ring-red-500"
                                     : "focus:border-blue-600 focus:ring-1 focus:ring-blue-500"
                               }`}
                               type="text"
@@ -223,9 +223,9 @@ const Crear_Proveedor = () => {
                            </label>
                            <Field
                               name="correo"
-                              className={`bg-grey-lighter text-grey-darker mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
+                              className={`mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
                                  errors.correo && touched.correo
-                                    ? "focus:border-red-600 focus:ring-1 focus:ring-red-500"
+                                    ? "border-red-600 ring-1 ring-red-500"
                                     : "focus:border-blue-600 focus:ring-1 focus:ring-blue-500"
                               }`}
                               type="email"
@@ -243,9 +243,9 @@ const Crear_Proveedor = () => {
                               <Field
                                  as="select"
                                  name="empresa"
-                                 className={`bg-grey-lighter text-grey-darker mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
+                                 className={`mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
                                     errors.empresa && touched.empresa
-                                       ? "focus:border-red-600 focus:ring-1 focus:ring-red-500"
+                                       ? "border-red-600 ring-1 ring-red-500"
                                        : "focus:border-blue-600 focus:ring-1 focus:ring-blue-500"
                                  }`}
                               >

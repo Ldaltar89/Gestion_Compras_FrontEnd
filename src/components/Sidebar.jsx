@@ -13,19 +13,19 @@ const Sidebar = () => {
          name: "Producto",
          url: "producto",
          icon: RiBox3Line,
-         protected: ["USER", "ADMIN"],
+         protected: ["Usuario", "Administrador"],
       },
       {
          name: "Proveedor",
          url: "proveedor",
          icon: RiUser2Line,
-         protected: ["ADMIN"],
+         protected: ["Administrador"],
       },
       {
          name: "Usuarios",
          url: "usuario",
          icon: RiUserAddLine,
-         protected: ["ADMIN"],
+         protected: ["Administrador"],
       },
    ];
 
@@ -63,15 +63,15 @@ const Sidebar = () => {
                      <p className="text-xs font-medium text-white">
                         {user.name}
                      </p>
-                     <span
-                        className={`inline-flex items-center rounded-md  px-2 py-1 text-[0.6rem] font-medium  ring-1 ring-inset ${
-                           user.rol === "ADMIN"
-                              ? "bg-green-50 text-green-600 ring-green-500/10"
-                              : "bg-blue-50 text-blue-600 ring-blue-500/10"
-                        } `}
-                     >
-                        {user.rol}
-                     </span>
+                     {user.rol === "Administrador" ? (
+                        <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-500 ring-1 ring-inset ring-green-600/20">
+                           {user.rol}
+                        </span>
+                     ) : (
+                        <span className="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-600/20">
+                           {user.rol}
+                        </span>
+                     )}
                   </span>
                </div>
             </div>

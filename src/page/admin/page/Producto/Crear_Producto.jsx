@@ -81,9 +81,9 @@ const Crear_Producto = () => {
                            </label>
                            <Field
                               name="producto"
-                              className={`bg-grey-lighter text-grey-darker mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
+                              className={`mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
                                  errors.producto && touched.producto
-                                    ? "focus:border-red-600 focus:ring-1 focus:ring-red-500"
+                                    ? "border-red-600 ring-1 ring-red-500"
                                     : "focus:border-blue-600 focus:ring-1 focus:ring-blue-500"
                               }`}
                               type="text"
@@ -101,9 +101,9 @@ const Crear_Producto = () => {
                               <Field
                                  as="select"
                                  name="proveedor"
-                                 className={`bg-grey-lighter text-grey-darker mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
+                                 className={`mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
                                     errors.proveedor && touched.proveedor
-                                       ? "focus:border-red-600 focus:ring-1 focus:ring-red-500"
+                                       ? "border-red-600 ring-1 ring-red-500"
                                        : "focus:border-blue-600 focus:ring-1 focus:ring-blue-500"
                                  }`}
                               >
@@ -140,9 +140,9 @@ const Crear_Producto = () => {
                            </label>
                            <Field
                               name="precio"
-                              className={`bg-grey-lighter text-grey-darker mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
+                              className={`mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
                                  errors.precio && touched.precio
-                                    ? "focus:border-red-600 focus:ring-1 focus:ring-red-500"
+                                    ? "border-red-600 ring-1 ring-red-500"
                                     : "focus:border-blue-600 focus:ring-1 focus:ring-blue-500"
                               }`}
                               type="number"
@@ -161,9 +161,9 @@ const Crear_Producto = () => {
                            <Field
                               as="textarea"
                               name="descripcion"
-                              className={`bg-grey-lighter text-grey-darker mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
+                              className={`mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
                                  errors.descripcion && touched.descripcion
-                                    ? "focus:border-red-600 focus:ring-1 focus:ring-red-500"
+                                    ? "border-red-600 ring-1 ring-red-500"
                                     : "focus:border-blue-600 focus:ring-1 focus:ring-blue-500"
                               }`}
                               type="textarea"
@@ -181,9 +181,9 @@ const Crear_Producto = () => {
                               <Field
                                  as="select"
                                  name="marca"
-                                 className={`bg-grey-lighter text-grey-darker mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
+                                 className={`mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
                                     errors.marca && touched.marca
-                                       ? "focus:border-red-600 focus:ring-1 focus:ring-red-500"
+                                       ? "border-red-600 ring-1 ring-red-500"
                                        : "focus:border-blue-600 focus:ring-1 focus:ring-blue-500"
                                  }`}
                               >
@@ -220,10 +220,10 @@ const Crear_Producto = () => {
                            </label>
                            <Field
                               name="fecha_elaboracion"
-                              className={`bg-grey-lighter text-grey-darker mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
+                              className={`mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
                                  errors.fecha_elaboracion &&
                                  touched.fecha_elaboracion
-                                    ? "focus:border-red-600 focus:ring-1 focus:ring-red-500"
+                                    ? "border-red-600 ring-1 ring-red-500"
                                     : "focus:border-blue-600 focus:ring-1 focus:ring-blue-500"
                               }`}
                               type="date"
@@ -238,10 +238,10 @@ const Crear_Producto = () => {
                            </label>
                            <Field
                               name="fecha_caducacion"
-                              className={`bg-grey-lighter text-grey-darker mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
+                              className={`mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
                                  errors.fecha_caducacion &&
                                  touched.fecha_caducacion
-                                    ? "focus:border-red-600 focus:ring-1 focus:ring-red-500"
+                                    ? "border-red-600 ring-1 ring-red-500"
                                     : "focus:border-blue-600 focus:ring-1 focus:ring-blue-500"
                               }`}
                               type="date"
@@ -260,9 +260,9 @@ const Crear_Producto = () => {
                               <Field
                                  as="select"
                                  name="categoria"
-                                 className={`bg-grey-lighter text-grey-darker mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
+                                 className={`mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
                                     errors.categoria && touched.categoria
-                                       ? "focus:border-red-600 focus:ring-1 focus:ring-red-500"
+                                       ? "border-red-600 ring-1 ring-red-500"
                                        : "focus:border-blue-600 focus:ring-1 focus:ring-blue-500"
                                  }`}
                               >
@@ -299,9 +299,9 @@ const Crear_Producto = () => {
                            </label>
                            <Field
                               name="peso"
-                              className={`bg-grey-lighter text-grey-darker mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
+                              className={`mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
                                  errors.peso && touched.peso
-                                    ? "focus:border-red-600 focus:ring-1 focus:ring-red-500"
+                                    ? "border-red-600 ring-1 ring-red-500"
                                     : "focus:border-blue-600 focus:ring-1 focus:ring-blue-500"
                               }`}
                               type="text"
@@ -319,9 +319,9 @@ const Crear_Producto = () => {
                               <Field
                                  as="select"
                                  name="unidad"
-                                 className={`bg-grey-lighter text-grey-darker mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
+                                 className={`mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
                                     errors.unidad && touched.unidad
-                                       ? "focus:border-red-600 focus:ring-1 focus:ring-red-500"
+                                       ? "border-red-600 ring-1 ring-red-500"
                                        : "focus:border-blue-600 focus:ring-1 focus:ring-blue-500"
                                  }`}
                               >
@@ -358,9 +358,9 @@ const Crear_Producto = () => {
                            </label>
                            <Field
                               name="envase"
-                              className={`bg-grey-lighter text-grey-darker mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
+                              className={`mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
                                  errors.envase && touched.envase
-                                    ? "focus:border-red-600 focus:ring-1 focus:ring-red-500"
+                                    ? "border-red-600 ring-1 ring-red-500"
                                     : "focus:border-blue-600 focus:ring-1 focus:ring-blue-500"
                               }`}
                               type="text"
@@ -376,9 +376,9 @@ const Crear_Producto = () => {
                            </label>
                            <Field
                               name="lote"
-                              className={`bg-grey-lighter text-grey-darker mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
+                              className={`mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
                                  errors.lote && touched.lote
-                                    ? "focus:border-red-600 focus:ring-1 focus:ring-red-500"
+                                    ? "border-red-600 ring-1 ring-red-500"
                                     : "focus:border-blue-600 focus:ring-1 focus:ring-blue-500"
                               }`}
                               type="text"
@@ -394,9 +394,9 @@ const Crear_Producto = () => {
                            </label>
                            <Field
                               name="stock"
-                              className={`bg-grey-lighter text-grey-darker mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
+                              className={`mb-3 block w-full appearance-none rounded border px-4 py-1.5 outline-none ${
                                  errors.stock && touched.stock
-                                    ? "focus:border-red-600 focus:ring-1 focus:ring-red-500"
+                                    ? "border-red-600 ring-1 ring-red-500"
                                     : "focus:border-blue-600 focus:ring-1 focus:ring-blue-500"
                               }`}
                               type="number"
