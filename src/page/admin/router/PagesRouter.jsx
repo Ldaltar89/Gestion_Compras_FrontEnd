@@ -9,6 +9,7 @@ import Editar_Proveedor from "../page/Proveedor/Editar_Proveedor";
 import Crear_Usuario from "../page/Usuario/Crear_Usuario";
 import Tabla_Usuario from "../page/Usuario/Tabla_Usuario";
 import ProtectedRouter from "./ProtectedRouter";
+import Editar_Usuario from "../page/Usuario/Editar_Usuario";
 
 const PagesRouter = () => {
    return (
@@ -28,6 +29,7 @@ const PagesRouter = () => {
                />
                <Route path="/usuario/crear" element={<Crear_Usuario />} />
                <Route path="/usuario" element={<Tabla_Usuario />} />
+               <Route path="/usuario/editar/:id" element={<Editar_Usuario />} />
             </Route>
 
             <Route path="/*" element={<Navigate to="/producto" />} />

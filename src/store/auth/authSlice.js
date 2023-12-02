@@ -7,6 +7,7 @@ export const authSlice = createSlice({
       user: {},
       errorMessage: undefined,
       statusButton: "",
+      viewUsuario: {},
    },
    reducers: {
       onLogin: (state, { payload }) => {

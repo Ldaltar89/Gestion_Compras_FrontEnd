@@ -5,6 +5,7 @@ import {
    onClearCheckingUser,
    onDeleteUser,
    onGetUsers,
+   onGetIdUsuario,
    onCheckingBottonUser,
    onClearCheckingBottonUser,
 } from "../store";
@@ -39,6 +40,29 @@ export const useUserStore = () => {
       dispatch(onClearCheckingBottonUser());
    };
 
+   const startGetIdUsuario = async (id) => {
+      dispatch(onCheckingUser());
+      try {
+         const { data } = await gestionComprasApi.get(`/auth/user/${id}`);
+         dispatch(onGetIdUsuario(data));
+      } catch (error) {
+         Swal.fire("Error al obtener usuario", "", "error");
+      }
+      dispatch(onClearCheckingUser());
+   };
+
+   const startPutUsuario = async (datos) => {
+      dispatch(onCheckingBottonUser("checkingPut"));
+      try {
+         await gestionComprasApi.put(`/auth/user/${datos.id}`, datos);
+         Swal.fire("Actualizado correctamente", "", "success");
+         navigate("/usuario");
+      } catch (error) {
+         Swal.fire("Error al actualizar usuario", "", "error");
+      }
+      dispatch(onClearCheckingBottonUser());
+   };
+
    const startDeleteUser = async (id) => {
       try {
          Swal.fire({
@@ -66,5 +90,11 @@ export const useUserStore = () => {
       }
    };
 
-   return { startUser, startDeleteUser, startRegister };
+   return {
+      startUser,
+      startDeleteUser,
+      startRegister,
+      startGetIdUsuario,
+      startPutUsuario,
+   };
 };

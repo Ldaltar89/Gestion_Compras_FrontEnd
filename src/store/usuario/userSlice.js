@@ -6,6 +6,7 @@ export const userSlice = createSlice({
       users: [],
       status: "",
       statusBotton: "",
+      viewUsuario: {},
    },
    reducers: {
       onGetUsers: (state, { payload }) => {
@@ -21,6 +22,9 @@ export const userSlice = createSlice({
       onClearCheckingUser: (state) => {
          state.status = "";
       },
+      onGetIdUsuario: (state, { payload }) => {
+         state.viewUsuario = payload.usuario;
+      },
       onCheckingBottonUser: (state, { payload }) => {
          state.statusBotton = payload;
       },
@@ -32,6 +36,7 @@ export const userSlice = createSlice({
 
 export const {
    onGetUsers,
+   onGetIdUsuario,
    onCheckingUser,
    onDeleteUser,
    onClearCheckingUser,

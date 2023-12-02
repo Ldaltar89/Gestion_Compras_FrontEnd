@@ -1,4 +1,4 @@
-import { RiDeleteBin6Line } from "react-icons/ri";
+import { RiDeleteBin6Line, RiEdit2Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import { useUserStore } from "../../../../hooks/useUserStore";
 import { useEffect } from "react";
@@ -65,16 +65,24 @@ const Tabla_Usuario = () => {
    const handleAccion = (items) => {
       return (
          <td className="py-2 pl-3 pr-4 text-center text-sm font-medium sm:pr-8 lg:pr-8">
-            <button
-               type="button"
-               className="inline-flex items-center gap-x-1.5 rounded-md bg-red-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500"
-               onClick={() => handleDelete(items._id)}
+            <Link
+               to={`/usuario/editar/${items._id}`}
+               className="inline-flex items-center gap-x-1.5 rounded-md bg-blue-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500"
             >
-               <RiDeleteBin6Line
-                  className="-ml-0.5 h-5 w-5"
-                  aria-hidden="true"
-               />
-            </button>
+               <RiEdit2Line className="-ml-0.5 h-5 w-5" aria-hidden="true" />
+            </Link>
+            {items.rol.nombre !== "Administrador" && (
+               <button
+                  type="button"
+                  className="ml-2 inline-flex items-center gap-x-1.5 rounded-md bg-red-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500"
+                  onClick={() => handleDelete(items._id)}
+               >
+                  <RiDeleteBin6Line
+                     className="-ml-0.5 h-5 w-5"
+                     aria-hidden="true"
+                  />
+               </button>
+            )}
          </td>
       );
    };
